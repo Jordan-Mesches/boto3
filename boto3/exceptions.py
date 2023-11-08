@@ -92,7 +92,7 @@ class DynamoDBOperationNotSupportedError(Boto3Error):
         msg = (
             f'{operation} operation cannot be applied to value {value} of type '
             f'{type(value)} directly. Must use AttributeBase object methods '
-            f'(i.e. Attr().eq()). to generate ConditionBase instances first.'
+            '(i.e. Attr().eq()). to generate ConditionBase instances first.'
         )
         Exception.__init__(self, msg)
 
@@ -107,8 +107,8 @@ class DynamoDBNeedsConditionError(Boto3Error):
     def __init__(self, value):
         msg = (
             f'Expecting a ConditionBase object. Got {value} of type {type(value)}. '
-            f'Use AttributeBase object methods (i.e. Attr().eq()). to '
-            f'generate ConditionBase instances.'
+            'Use AttributeBase object methods (i.e. Attr().eq()). to '
+            'generate ConditionBase instances.'
         )
         Exception.__init__(self, msg)
 

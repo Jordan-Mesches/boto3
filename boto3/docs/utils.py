@@ -63,7 +63,7 @@ def get_identifier_args_for_signature(identifier_names):
 def get_identifier_description(resource_name, identifier_name):
     return (
         f"The {resource_name}'s {identifier_name} identifier. "
-        f"This **must** be set."
+        "This **must** be set."
     )
 
 

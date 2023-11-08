@@ -117,8 +117,8 @@ def document_collection_object(
     )
     section.include_doc_string(
         f'A {collection_model.resource.type} Collection will include all '
-        f'resources by default, and extreme caution should be taken when '
-        f'performing actions on all resources.'
+        'resources by default, and extreme caution should be taken when '
+        'performing actions on all resources.'
     )
 
 
@@ -227,7 +227,7 @@ def document_collection_method(
         'all': {
             'method_description': (
                 f'Creates an iterable of all {collection_model.resource.type} '
-                f'resources in the collection.'
+                'resources in the collection.'
             ),
             'example_prefix': '{}_iterator = {}.{}.all'.format(
                 xform_name(collection_model.resource.type),
@@ -239,11 +239,11 @@ def document_collection_method(
         'filter': {
             'method_description': (
                 f'Creates an iterable of all {collection_model.resource.type} '
-                f'resources in the collection filtered by kwargs passed to '
+                'resources in the collection filtered by kwargs passed to '
                 f'method. A {collection_model.resource.type} collection will '
-                f'include all resources by default if no filters are provided, '
-                f'and extreme caution should be taken when performing actions '
-                f'on all resources.'
+                'include all resources by default if no filters are provided, '
+                'and extreme caution should be taken when performing actions '
+                'on all resources.'
             ),
             'example_prefix': '{}_iterator = {}.{}.filter'.format(
                 xform_name(collection_model.resource.type),
@@ -256,7 +256,7 @@ def document_collection_method(
         },
         'limit': {
             'method_description': (
-                f'Creates an iterable up to a specified amount of '
+                'Creates an iterable up to a specified amount of '
                 f'{collection_model.resource.type} resources in the collection.'
             ),
             'example_prefix': '{}_iterator = {}.{}.limit'.format(
@@ -279,8 +279,8 @@ def document_collection_method(
         'page_size': {
             'method_description': (
                 f'Creates an iterable of all {collection_model.resource.type} '
-                f'resources in the collection, but limits the number of '
-                f'items returned by each service call by the specified amount.'
+                'resources in the collection, but limits the number of '
+                'items returned by each service call by the specified amount.'
             ),
             'example_prefix': '{}_iterator = {}.{}.page_size'.format(
                 xform_name(collection_model.resource.type),
