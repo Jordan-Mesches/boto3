@@ -285,8 +285,7 @@ class ResourceDocumenter(BaseDocumenter):
 
     def _add_actions(self, section):
         section = section.add_new_section('actions')
-        actions = self._resource.meta.resource_model.actions
-        if actions:
+        if actions := self._resource.meta.resource_model.actions:
             documenter = ActionDocumenter(self._resource, self._root_docs_path)
             documenter.member_map = self.member_map
             documenter.document_actions(section)
@@ -294,8 +293,7 @@ class ResourceDocumenter(BaseDocumenter):
 
     def _add_sub_resources(self, section):
         section = section.add_new_section('sub-resources')
-        sub_resources = self._resource.meta.resource_model.subresources
-        if sub_resources:
+        if sub_resources := self._resource.meta.resource_model.subresources:
             documenter = SubResourceDocumenter(
                 self._resource, self._root_docs_path
             )
@@ -305,8 +303,7 @@ class ResourceDocumenter(BaseDocumenter):
 
     def _add_collections(self, section):
         section = section.add_new_section('collections')
-        collections = self._resource.meta.resource_model.collections
-        if collections:
+        if collections := self._resource.meta.resource_model.collections:
             documenter = CollectionDocumenter(
                 self._resource, self._root_docs_path
             )
@@ -316,8 +313,7 @@ class ResourceDocumenter(BaseDocumenter):
 
     def _add_waiters(self, section):
         section = section.add_new_section('waiters')
-        waiters = self._resource.meta.resource_model.waiters
-        if waiters:
+        if waiters := self._resource.meta.resource_model.waiters:
             service_waiter_model = self._botocore_session.get_waiter_model(
                 self._service_name
             )

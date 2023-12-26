@@ -124,8 +124,7 @@ def build_param_structure(params, target, value, index=None):
     # set the value.
     for i, part in enumerate(parts):
         # Is it indexing an array?
-        result = INDEX_RE.search(part)
-        if result:
+        if result := INDEX_RE.search(part):
             if result.group(1):
                 if result.group(1) == '*':
                     part = part[:-3]

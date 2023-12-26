@@ -443,8 +443,7 @@ class ResourceModel:
 
         for item in self._definition.get('identifiers', []):
             name = self._get_name('identifier', item['name'])
-            member_name = item.get('memberName', None)
-            if member_name:
+            if member_name := item.get('memberName', None):
                 member_name = self._get_name('attribute', member_name)
             identifiers.append(Identifier(name, member_name))
 
@@ -457,9 +456,8 @@ class ResourceModel:
 
         :type: :py:class:`Action` or ``None``
         """
-        action = self._definition.get('load')
 
-        if action is not None:
+        if (action := self._definition.get('load')) is not None:
             action = Action('load', action, self._resource_defs)
 
         return action

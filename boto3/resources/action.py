@@ -48,8 +48,7 @@ class ServiceAction:
 
         # In the simplest case we just return the response, but if a
         # resource is defined, then we must create these before returning.
-        resource_response_model = action_model.resource
-        if resource_response_model:
+        if resource_response_model := action_model.resource:
             self._response_handler = ResourceHandler(
                 search_path=resource_response_model.path,
                 factory=factory,

@@ -428,8 +428,7 @@ def copy(
     if Callback is not None:
         subscribers = [ProgressCallbackInvoker(Callback)]
 
-    config = Config
-    if config is None:
+    if (config := Config) is None:
         config = TransferConfig()
 
     with create_transfer_manager(self, config) as manager:
@@ -621,8 +620,7 @@ def upload_fileobj(
     if Callback is not None:
         subscribers = [ProgressCallbackInvoker(Callback)]
 
-    config = Config
-    if config is None:
+    if (config := Config) is None:
         config = TransferConfig()
 
     with create_transfer_manager(self, config) as manager:
@@ -780,8 +778,7 @@ def download_fileobj(
     if Callback is not None:
         subscribers = [ProgressCallbackInvoker(Callback)]
 
-    config = Config
-    if config is None:
+    if (config := Config) is None:
         config = TransferConfig()
 
     with create_transfer_manager(self, config) as manager:

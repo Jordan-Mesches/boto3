@@ -519,8 +519,7 @@ class ResourceFactory:
             # linked with the ``foo`` queue and which has a ``bar`` receipt
             # handle. If we did kwargs here then future positional arguments
             # would lead to failure.
-            identifiers = subresource_model.resource.identifiers
-            if identifiers is not None:
+            if (identifiers := subresource_model.resource.identifiers) is not None:
                 for identifier, value in build_identifiers(identifiers, self):
                     positional_args.append(value)
 

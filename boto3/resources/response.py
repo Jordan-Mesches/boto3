@@ -239,9 +239,8 @@ class ResourceHandler:
         )
 
         # If any of the identifiers is a list, then the response is plural
-        plural = [v for v in identifiers.values() if isinstance(v, list)]
 
-        if plural:
+        if plural := [v for v in identifiers.values() if isinstance(v, list)]:
             response = []
 
             # The number of items in an identifier that is a list will

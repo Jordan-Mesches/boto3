@@ -119,8 +119,7 @@ class ServiceDocumenter(BaseServiceDocumenter):
         ).document_resource(service_resource_doc)
         # Write collections in individual/nested files.
         # Path: <root>/reference/services/<service>/<resource_name>/<collection_name>.rst
-        resource_name = self._service_resource.meta.resource_model.name
-        if resource_name == self._service_name:
+        if (resource_name := self._service_resource.meta.resource_model.name) == self._service_name:
             resource_name = 'service-resource'
         service_resource_dir_path = os.path.join(
             self._root_docs_path,
