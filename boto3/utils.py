@@ -73,7 +73,7 @@ def inject_attribute(class_attributes, name, value):
     if name in class_attributes:
         raise RuntimeError(
             f'Cannot inject class attribute "{name}", attribute '
-            f'already exists in class dict.'
+            'already exists in class dict.'
         )
     else:
         class_attributes[name] = value
