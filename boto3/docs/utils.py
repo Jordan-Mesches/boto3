@@ -108,16 +108,12 @@ class DocumentModifiedShape:
                 )
 
     def _replace_documentation(self, event_name, section):
-        if event_name.startswith(
-            'docs.request-example'
-        ) or event_name.startswith('docs.response-example'):
+        if event_name.startswith(('docs.request-example', 'docs.response-example')):
             section.remove_all_sections()
             section.clear_text()
             section.write(self._new_example_value)
 
-        if event_name.startswith(
-            'docs.request-params'
-        ) or event_name.startswith('docs.response-params'):
+        if event_name.startswith(('docs.request-params', 'docs.response-params')):
             allowed_sections = (
                 'param-name',
                 'param-documentation',
